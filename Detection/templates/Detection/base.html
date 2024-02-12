@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PotatoDiseaseDetection{% endblock %}</title>
+</head>
+<style>
+    @font-face {
+      font-family: 'CustomFont';
+      src: url('{% static "Fonts/Quitars.ttf" %}') format('truetype');
+    }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<nav>
+    <a href="{% url 'Detection:index' %}"><img src="{% static 'Detection/fahad-02 (1).png' %}" alt="" style="margin:auto; width: 55%; margin-top: 5%;"></a>
+</nav>
+
+<body style="background-image: url('{% static 'Detection/1_XQm8ydsK4eL7BzBrfGYdrg (1).webp' %}')">
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

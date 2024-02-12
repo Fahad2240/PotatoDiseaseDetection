@@ -1,0 +1,24 @@
+{% extends 'Detection\base.html' %}
+{% load static %}
+{% block title %}InputImage{% endblock %}
+{% block content %}
+<!-- <h1 class='pt-24 mb-5 text-3xl text-center text-white'>Fahad</h1> -->
+<div class="mt-5 flex flex-col items-center">
+    <form action="." method="post" enctype="multipart/form-data" class=" font-bold text-4xl text-white " style="font-family: 'CustomFont';">
+        {% csrf_token %}
+        <div>
+            {{form.as_p}}
+        </div>
+        {% if form.errors or form.non_field_errors %}
+            <div class="mb-3 rounded-xl p-6 bg-purple-700">
+                {% for field in form %}
+                    {{field.errors}}
+                {% endfor %}
+                {{form.non_field_errors}}
+            </div> 
+        {% elif 'form:select' %}
+            <button type="submit" class="mt-5 py-2 px-8 rounded-xl text-white" style="background-color: rgb(67, 236, 33);">Enter</button>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}
